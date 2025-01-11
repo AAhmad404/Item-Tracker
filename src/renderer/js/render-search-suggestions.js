@@ -12,8 +12,9 @@ $(document).ready(() => {
     window.electron.on('search-suggestions', (data) => {
         const searchResults = $('#search-suggestions');
         const searchText = $('#search-bar').val().trim();
+
         if (data.error) {
-            console.error('Error retrieving items:', data.error);
+            showErrorDialog('Error retrieving items:', data.error);
         } else {
             searchResults.empty();
 
@@ -41,4 +42,8 @@ $(document).ready(() => {
         $('#search-bar').val('');
         $('#search-suggestions').empty();
     });
+
+    function showErrorDialog(message) {
+        window.electron.send('show-error-dialog', { message });
+    }
 });

@@ -25,7 +25,6 @@ $(document).ready(() => {
         if (response.success) {
             showSuccessDialog('Item added successfully.');
         } else {
-            console.error('Error occurred while attempting to add the item:', response.error);
             showErrorDialog('Failed to add item. Please try again.');
         }
     });

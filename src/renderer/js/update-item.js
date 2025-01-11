@@ -15,22 +15,6 @@ $(document).ready(() => {
         window.electron.send('update-item-information', { updatedItem, imageData: isDataUrl ? imageData : '', filename });
     });
 
-    window.electron.on('item-updated', (response) => {
-        if (response.success) {
-            showSuccessDialog('Item information updated successfully.');
-        } else {
-            showErrorDialog('Failed to update item information. Please try again.');
-        }
-    });
-
-    function showErrorDialog(message) {
-        window.electron.send('show-error-dialog', { message });
-    }
-
-    function showSuccessDialog(message) {
-        window.electron.send('show-success-dialog', { message });
-    }
-
     function validateForm() {
         const itemInformationNameInput = $('#item-info-name-input');
         const itemInformationLocationInput = $('#item-info-location-input');
@@ -57,5 +41,21 @@ $(document).ready(() => {
             count: parseInt(count),
             image_path: window.currentItem.image_path
         };
+    }
+
+    window.electron.on('item-updated', (response) => {
+        if (response.success) {
+            showSuccessDialog('Item information updated successfully.');
+        } else {
+            showErrorDialog('Failed to update item information. Please try again.');
+        }
+    });
+
+    function showErrorDialog(message) {
+        window.electron.send('show-error-dialog', { message });
+    }
+
+    function showSuccessDialog(message) {
+        window.electron.send('show-success-dialog', { message });
     }
 });

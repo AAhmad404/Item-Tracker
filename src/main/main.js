@@ -10,7 +10,7 @@ const resourcesPath = path.join(app.getAppPath(), 'src', 'resources', 'images', 
 
 const db = new sqlite3.Database('src/main/database/database.db', (err) => {
     if (err) {
-        console.error('Error connecting to database:', err.message);
+        // console.error('Error connecting to database:', err.message);
     }
 });
 
@@ -273,7 +273,6 @@ if (require('electron-squirrel-startup')) {
 }
 
 const createWindow = () => {
-    console.log('Current Directory:', __dirname);
     const mainWindow = new BrowserWindow({
         width: 1000,
         height: 750,
@@ -287,8 +286,6 @@ const createWindow = () => {
 
     const indexPath = path.join(__dirname, '../renderer/html/index.html');
     mainWindow.loadFile(indexPath);
-
-    console.log(path.resolve(__dirname, '../resources/icons/app-icon.ico'));
 
     // Open the DevTools.
     // mainWindow.webContents.openDevTools();

@@ -5,7 +5,7 @@ $(document).ready(() => {
 
     window.electron.on('recent-items', (data) => {
         if (data.error) {
-            console.error('Error retrieving items:', data.error);
+            showErrorDialog('Error retrieving items:', data.error)
         } 
 
         if (data.data.length === 0) {
@@ -35,4 +35,8 @@ $(document).ready(() => {
 
         window.displayItemInformation(item);
     });
+
+    function showErrorDialog(message) {
+        window.electron.send('show-error-dialog', { message });
+    }
 });

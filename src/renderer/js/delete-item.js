@@ -11,7 +11,6 @@ $(document).ready(() => {
         if (response.success) {
             showSuccessDialog('Item deleted successfully.');
         } else {
-            console.error('Error occurred while attempting delete the item:', response.error);
             showErrorDialog('Failed to delete item. Please try again.');
         }
     });
