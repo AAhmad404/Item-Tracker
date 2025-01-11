@@ -14,7 +14,7 @@ $(document).ready(() => {
     addItemSection.hide();
     itemInformationSection.hide();
 
-    window.displayItemInformation = function(item) {
+    window.displayItemInformation = function (item) {
         // Clear the item information inputs in case their remains text from previous searches
         itemInformationNameInput.val('');
         itemInformationLocationInput.val('');
@@ -34,11 +34,11 @@ $(document).ready(() => {
 
             const img = new Image();
             img.src = fullImagePath;
-            img.onload = function() {
+            img.onload = function () {
                 itemImage.css('background-image', `url(${fullImagePath})`);
                 popupImage.attr('src', fullImagePath);
             };
-            img.onerror = function() {
+            img.onerror = function () {
                 const defaultImagePath = '../../resources/images/default-image.png';
                 itemImage.css('background-image', `url(${defaultImagePath})`);
                 popupImage.attr('src', defaultImagePath);

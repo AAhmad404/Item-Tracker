@@ -5,7 +5,7 @@ $(document).ready(() => {
         if (!newItem) return;
 
         let imageData = $('#add-item-image').css('background-image');
-        
+
         if (imageData && imageData !== 'none') {
             imageData = imageData.replace(/url\(['"]?(.*?)['"]?\)/, '$1');
         } else {
@@ -18,7 +18,7 @@ $(document).ready(() => {
         // Generate unique filename if the image is new
         const filename = isDataUrl ? `item_image_${Date.now()}.png` : '';
 
-        window.electron.send('add-item-information', { newItem, imageData: isDataUrl ? imageData : '', filename });
+        window.electron.send('add-item-information', {newItem, imageData: isDataUrl ? imageData : '', filename});
     });
 
     window.electron.on('item-added', (response) => {
@@ -36,7 +36,7 @@ $(document).ready(() => {
 
         const name = addItemNameInput.val().trim() || addItemNameInput.attr('placeholder');
         const location = addItemLocationInput.val().trim() || addItemLocationInput.attr('placeholder');
-        const count = addItemCountInput .val().trim() || addItemCountInput .attr('placeholder');
+        const count = addItemCountInput.val().trim() || addItemCountInput.attr('placeholder');
 
         if (!addItemNameInput || !addItemLocationInput || !addItemCountInput) {
             showErrorDialog('Please fill in all the fields.');
@@ -56,10 +56,10 @@ $(document).ready(() => {
     }
 
     function showErrorDialog(message) {
-        window.electron.send('show-error-dialog', { message });
+        window.electron.send('show-error-dialog', {message});
     }
 
     function showSuccessDialog(message) {
-        window.electron.send('show-success-dialog', { message });
+        window.electron.send('show-success-dialog', {message});
     }
 });

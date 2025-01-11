@@ -34,9 +34,9 @@ $(document).ready(() => {
         }
     });
 
-    $('#search-suggestions').on('click', 'button.suggestion-button', function() {
+    $('#search-suggestions').on('click', 'button.suggestion-button', function () {
         const item = $(this).data('item');
-        
+
         window.displayItemInformation(item);
 
         $('#search-bar').val('');
@@ -44,6 +44,6 @@ $(document).ready(() => {
     });
 
     function showErrorDialog(message) {
-        window.electron.send('show-error-dialog', { message });
+        window.electron.send('show-error-dialog', {message});
     }
 });

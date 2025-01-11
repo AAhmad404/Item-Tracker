@@ -3,7 +3,7 @@ $(document).ready(() => {
     const addItemFileUploader = $('#add-item-file-uploader');
 
     function createUploadImageHandler(section) {
-        return function(event) {
+        return function (event) {
             const fileUploadInput = event.target;
 
             if (!fileUploadInput.value) {
@@ -44,7 +44,7 @@ $(document).ready(() => {
         };
     }
 
-    window.triggerFileUpload = function(section) {
+    window.triggerFileUpload = function (section) {
         if (section === 'item-information') {
             itemInfoFileUploader.off('change').on('change', createUploadImageHandler(section));
             itemInfoFileUploader.click();

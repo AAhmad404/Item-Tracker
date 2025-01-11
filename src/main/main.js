@@ -10,7 +10,7 @@ const resourcesPath = path.join(app.getAppPath(), 'src', 'resources', 'images', 
 
 const db = new sqlite3.Database('src/main/database/database.db', (err) => {
     if (err) {
-        // console.error('Error connecting to database:', err.message);
+        dialog.showErrorBox('Error connecting to database: ', err.message);
     }
 });
 

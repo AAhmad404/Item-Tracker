@@ -12,7 +12,7 @@ $(document).ready(() => {
         // Generate unique filename if the image is new
         const filename = isDataUrl ? `item_image_${Date.now()}.png` : '';
 
-        window.electron.send('update-item-information', { updatedItem, imageData: isDataUrl ? imageData : '', filename });
+        window.electron.send('update-item-information', {updatedItem, imageData: isDataUrl ? imageData : '', filename});
     });
 
     function validateForm() {
@@ -52,10 +52,10 @@ $(document).ready(() => {
     });
 
     function showErrorDialog(message) {
-        window.electron.send('show-error-dialog', { message });
+        window.electron.send('show-error-dialog', {message});
     }
 
     function showSuccessDialog(message) {
-        window.electron.send('show-success-dialog', { message });
+        window.electron.send('show-success-dialog', {message});
     }
 });
