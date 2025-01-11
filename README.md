@@ -1,12 +1,25 @@
 # Item Tracker
 
-**Item Tracker** is a simple desktop application built using **JavaScript** and the **Electron** framework that allows users to organize and manage items. Note that this application currently only supports windows machines.
+Item Tracker is a simple desktop application built using JavaScript and the Electron framework that allows
+users to organize and manage items. Note that this application currently only supports Windows.
 
 ## Features
 
-- **Search**: Quickly find items with a search system that matches entries based on names and locations.
-- **Modern UI**: A clean, intuitive interface designed for ease of use, ensuring seamless interaction for all users.
-- **Local Database**: Data is stored locally using SQLite.
+**Modern UI**
+
+A clean and intuitive interface designed for ease of use.
+
+<img src="readme-assets/home.png" alt="Home Image" width="250"><br>
+
+**Search**
+
+Quickly find items with a search system that matches entries based on names and locations.
+
+<img src="readme-assets/search.png" alt="Search Image" width="250"><br>
+
+**Local Database**
+
+Data is stored locally using SQLite.
 
 ## Installation
 
@@ -38,8 +51,11 @@
 ## Built With
 
 Electron - Framework for building cross-platform desktop apps
+
 SQLite - Lightweight database for local storage
+
 JavaScript - Programming language used
+
 Node.js - Runtime for JavaScript
 
 ## Contributing
@@ -52,7 +68,7 @@ If you’d like to contribute, please:
 
 ## Author
 
-- Aqeeb Ahmad
+- Ahmad
 
 ## License
 
@@ -60,8 +76,8 @@ This project is licensed under the MIT License. See the [LICENSE.md](LICENSE.md)
 
 ## Acknowledgements
 
-Electron for making JavaScript desktop apps easy to develop.
+- [Electron](https://www.electronjs.org/)
 
-SQLite for the lightweight database.
+- [SQLite](https://www.sqlite.org/)
 
-Open-source community for libraries and tools that make development efficient and enjoyable.
+- Open-source community for other libraries/tools used.
